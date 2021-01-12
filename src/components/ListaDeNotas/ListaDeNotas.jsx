@@ -3,16 +3,17 @@ import './estilo.css';
 import CardNota from "../CardNota/CardNota";
 
 const ListaDeNotas = () => {
-    return (
-        <ul>{Array.of("Teste 1", "Teste 2", "Teste 3").map((string, index) => {
-            return (
-                <li key={index}>
-                    <div className='titulo-nota'>{string}</div>
-                    <CardNota/>
+        return (
+          <ul className="lista-notas">
+            {Array.of("Trabalho", "Trabalho", "Estudos").map((categoria, index) => {
+              return (
+                <li className="lista-notas_item" key={index}>
+                  <CardNota />
                 </li>
-            )
-        })}</ul>
-    )
+              );
+            })}
+          </ul>
+        );
 }
 
 export default ListaDeNotas;
