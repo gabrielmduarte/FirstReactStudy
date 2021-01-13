@@ -2,18 +2,22 @@ import React from 'react';
 import './estilo.css';
 import CardNota from "../CardNota/CardNota";
 
-const ListaDeNotas = () => {
-        return (
-          <ul className="lista-notas">
-            {Array.of("Trabalho", "Trabalho", "Estudos").map((categoria, index) => {
-              return (
-                <li className="lista-notas_item" key={index}>
-                  <CardNota />
-                </li>
-              );
+const ListaDeNotas = (props) => {
+    return (
+        <ul className="lista-notas">
+            {props.notas.map((nota, index) => {
+                return (
+                    <li className="lista-notas_item" key={index}>
+                        <CardNota
+                            index={index}
+                            titulo={nota.titulo}
+                            texto={nota.texto}
+                            onDelete={props.onDelete}/>
+                    </li>
+                );
             })}
-          </ul>
-        );
+        </ul>
+    );
 }
 
 export default ListaDeNotas;
