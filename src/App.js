@@ -31,7 +31,7 @@ function App() {
     return (
         <section className='conteudo'>
             <FormTeste criarNota={criarNota}/>
-            <main>
+            <main className='conteudo-principal'>
                 <ListaDeNotas notas={notas} onDelete={deleteCard}/>
                 <ListaDeCategoria categorias={categorias} onCreate={criarCategoria}/>
             </main>
