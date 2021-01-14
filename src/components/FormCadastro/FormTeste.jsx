@@ -5,16 +5,25 @@ const FormTeste = (props) => {
 
     const [titulo, setTitulo] = React.useState('');
     const [texto, setTexto] = React.useState('');
+    const [categoria, setCategoria] = React.useState('')
 
     const _criaNota = (evento) => {
         evento.preventDefault();
         evento.stopPropagation();
-        props.criarNota(titulo, texto)
+        props.criarNota(titulo, texto, categoria)
     }
 
     return (
         <form className="form-cadastro"
-            onSubmit={_criaNota}>
+              onSubmit={_criaNota}>
+            <select
+                className="form-cadastro_input"
+                onChange={evento => setCategoria(evento.target.value)}
+            >
+                {props.categorias.map(cat => {
+                    return <option>{cat}</option>;
+                })}
+            </select>
             <input
                 type="text"
                 placeholder="Título"

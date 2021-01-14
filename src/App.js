@@ -10,8 +10,8 @@ function App() {
     const [notas, setNotas] = React.useState([]);
     const [categorias, setCategorias] = React.useState(["Trabalho", "Esportes"]);
 
-    const criarNota = (titulo, texto) => {
-        const novaNota = {titulo, texto};
+    const criarNota = (titulo, texto, categoria) => {
+        const novaNota = {titulo, texto, categoria};
         const novoArrayNotas = [...notas, novaNota]
         setNotas(novoArrayNotas)
     }
@@ -30,10 +30,10 @@ function App() {
 
     return (
         <section className='conteudo'>
-            <FormTeste criarNota={criarNota}/>
+            <FormTeste categorias={categorias} criarNota={criarNota}/>
             <main className='conteudo-principal'>
-                <ListaDeNotas notas={notas} onDelete={deleteCard}/>
                 <ListaDeCategoria categorias={categorias} onCreate={criarCategoria}/>
+                <ListaDeNotas notas={notas} onDelete={deleteCard}/>
             </main>
         </section>
     );

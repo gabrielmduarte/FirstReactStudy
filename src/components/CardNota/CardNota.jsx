@@ -12,6 +12,7 @@ const CardNota = (props) => {
                 <img src={deleteSVG} onClick={() => props.onDelete(props.index)}/>
             </header>
             <p className="card-nota_texto">{props.texto}</p>
+            <p className="card-nota_texto">{props.categoria}</p>
         </section>
     );
 }

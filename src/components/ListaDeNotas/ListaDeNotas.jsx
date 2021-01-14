@@ -12,6 +12,7 @@ const ListaDeNotas = (props) => {
                             index={index}
                             titulo={nota.titulo}
                             texto={nota.texto}
+                            categoria={nota.categoria}
                             onDelete={props.onDelete}/>
                     </li>
                 );
